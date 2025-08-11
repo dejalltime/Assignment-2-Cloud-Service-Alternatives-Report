@@ -1,4 +1,3 @@
-
 # Cloud Security & Compliance Service Comparison
 
 ## Objective
@@ -6,10 +5,10 @@ This report compares key Microsoft Azure services used in our course with equiva
 
 ---
 
-## 1. Azure Active Directory (SSO, IAM)
+## 1. Microsoft Entra ID (formerly Azure Active Directory)
 
-| Feature               | Azure Active Directory | AWS Equivalent: AWS IAM + AWS SSO | GCP Equivalent: Google Identity Platform |
-|-----------------------|------------------------|------------------------------------|-------------------------------------------|
+| Feature               | Microsoft Entra ID | AWS Equivalent: AWS IAM + AWS SSO | GCP Equivalent: Google Identity Platform |
+|-----------------------|--------------------|------------------------------------|-------------------------------------------|
 | **Overview**          | Cloud-based identity and access management service for SSO, MFA, and conditional access. | Manages AWS accounts, roles, and permissions; AWS SSO handles single sign-on. | Provides identity services, SSO, MFA, and integration with Google Workspace. |
 | **Core Features**     | SSO, MFA, Conditional Access, B2B/B2C identity, Role-based access control. | IAM roles, policies, federated access; AWS SSO for multi-app sign-on. | OAuth 2.0, OpenID Connect, MFA, Cloud Identity for RBAC. |
 | **Security & Compliance** | ISO 27001, SOC 1/2, FedRAMP, HIPAA, GDPR. | ISO 27001, SOC, FedRAMP, HIPAA, GDPR. | ISO 27001, SOC 1/2/3, FedRAMP, HIPAA, GDPR. |
@@ -66,18 +65,43 @@ This report compares key Microsoft Azure services used in our course with equiva
 
 ---
 
+## 6. Azure Landing Zone
+
+| Feature               | Azure Landing Zone | AWS Equivalent: AWS Control Tower | GCP Equivalent: Google Cloud Landing Zone Framework |
+|-----------------------|--------------------|------------------------------------|------------------------------------------------------|
+| **Overview**          | A set of guidelines, templates, and best practices to set up Azure environments for scale, governance, and compliance. | Automates account setup, baseline configuration, and governance for multi-account AWS environments. | Best practices and automation templates for setting up secure and compliant GCP environments. |
+| **Core Features**     | ARM/Bicep templates, policy enforcement, resource organization, security baselines. | Account Factory, guardrails, integrated governance. | Project setup automation, security guardrails, policy enforcement. |
+| **Security & Compliance** | Aligns with CIS, NIST, ISO, and FedRAMP guidelines. | Aligns with CIS, NIST, and AWS Well-Architected Framework. | Aligns with CIS, NIST, ISO, and Google’s security best practices. |
+| **Pricing Model**     | No direct cost; based on resources deployed. | No direct cost; based on resources deployed. | No direct cost; based on resources deployed. |
+| **DevSecOps Integration** | Works with Infrastructure as Code (IaC) tools like Terraform and Azure DevOps pipelines. | Works with IaC tools like Terraform and AWS CodePipeline. | Works with Terraform, Deployment Manager, and CI/CD tools. |
+
+---
+
+## 7. Azure Logic Apps
+
+| Feature               | Azure Logic Apps | AWS Equivalent: AWS Step Functions | GCP Equivalent: Google Cloud Workflows |
+|-----------------------|------------------|-------------------------------------|------------------------------------------|
+| **Overview**          | A cloud service for creating and running automated workflows integrating apps, data, and services. | Orchestrates serverless workflows and integrates AWS services. | Orchestrates and automates workflows between Google Cloud services and external APIs. |
+| **Core Features**     | Pre-built connectors, triggers, visual designer, B2B integration. | State machines, visual workflow builder, integrations. | YAML/JSON workflow definitions, connectors, API calls. |
+| **Security & Compliance** | ISO 27001, SOC, GDPR, HIPAA. | ISO 27001, SOC, GDPR, HIPAA. | ISO 27001, SOC, GDPR, HIPAA. |
+| **Pricing Model**     | Pay per execution and connector used. | Pay per state transition. | Pay per step execution. |
+| **DevSecOps Integration** | Integration with CI/CD pipelines for automated deployments. | Integrated with AWS SDK, CLI, and CodePipeline. | Integrated with Cloud Build, APIs, and CI/CD tools. |
+
+---
+
 ## Summary Table
 
 | Azure Service | AWS Equivalent | GCP Equivalent |
 |---------------|---------------|----------------|
-| Azure Active Directory | AWS IAM + SSO | Google Identity Platform |
+| Microsoft Entra ID | AWS IAM + SSO | Google Identity Platform |
 | Azure Monitor & Log Analytics | Amazon CloudWatch | Cloud Operations Suite |
 | Azure Policy | AWS Organizations + SCPs | Organization Policy Service |
 | Defender for Cloud | AWS Security Hub | Security Command Center |
 | Azure Sentinel | AWS Security Lake + Partner SIEM | Chronicle Security Operations |
+| Azure Landing Zone | AWS Control Tower | Google Cloud Landing Zone Framework |
+| Azure Logic Apps | AWS Step Functions | Google Cloud Workflows |
 
 ---
 
 ## Conclusion
-While Azure, AWS, and GCP offer similar core functionalities, their pricing models, integration options, and native tooling vary. Azure excels in tight integration with Microsoft products and Policy-as-Code, AWS provides mature IAM and security aggregation tools, and GCP offers strong data analytics capabilities within security tooling. Understanding these differences is crucial for effective multi-cloud DevSecOps strategies.
-
+While Azure, AWS, and GCP offer similar core functionalities, their pricing models, integration options, and native tooling vary. Azure excels in tight integration with Microsoft products, policy/governance frameworks, and automation tools. AWS provides mature governance, orchestration, and identity management capabilities, while GCP offers strong workflow automation and data analytics capabilities. Understanding these differences is crucial for effective multi-cloud DevSecOps strategies.
